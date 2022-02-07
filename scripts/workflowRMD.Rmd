@@ -19,10 +19,12 @@ library(sf)
 library(ggspatial)
 
 #US interstate shape file
-interstates <- read_sf(layer = "qn309jc5979", dsn = ".")
+interstates <- read_sf(layer = "qn309jc5979", dsn = "shapefiles")
 
 #Load Joro observation dataset, create columns for date, year, month, and y.day
+setwd("C:/Users/jfdei/OneDrive/Desktop/iNaturalist/data")
 joro <- read.csv("Joro.iNat.csv", header = TRUE)
+setwd("C:/Users/jfdei/OneDrive/Desktop/iNaturalist")
 
 joro <- joro %>%
   select(observed_on, latitude, longitude)%>%
