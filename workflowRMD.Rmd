@@ -9,7 +9,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Data and R packages
+## Data and R packages
 
 ```{r message=FALSE,warning=FALSE}
 library(maps)
@@ -18,7 +18,7 @@ library(lubridate)
 library(sf)
 library(ggspatial)
 
-#Load interstate shape file
+#US interstate shape file
 interstates <- read_sf(layer = "qn309jc5979", dsn = ".")
 
 #Load Joro observation dataset, create columns for date, year, month, and y.day
@@ -63,6 +63,8 @@ Joro1.sfc <- st_sfc(Joro1.sfg, crs = 4269)
 
 Joro1.sf <- joro1 %>%
   st_as_sf(geometry = Joro1.sfc)
+
+#Now we have joro observations as a spatial object in R
 
 #thats a bit better
 ggplot()+

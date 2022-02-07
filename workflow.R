@@ -1,4 +1,4 @@
-#basic workflow for making nice maps with iNaturalist data
+#basic script for making nice maps with iNaturalist data
 
 #R packages used
 library(maps)
@@ -10,7 +10,7 @@ library(ggspatial)
 library(spData)
 library(spDataLarge)
 
-#Load interstate shape file
+#US interstate shape file
 interstates <- read_sf(layer = "qn309jc5979", dsn = ".")
 
 #Load Joro observation dataset, create columns for date, year, month, and y.day
@@ -47,7 +47,9 @@ Joro1.sfc <- st_sfc(Joro1.sfg, crs = 4269)
 Joro1.sf <- joro1 %>%
   st_as_sf(geometry = Joro1.sfc)
 
-#thats a bit better
+#Now we have joro observations as a spatial object in R
+
+#this a bit better
 ggplot()+
   geom_polygon(data = map_data("state"),
                aes(x = long, y = lat, group = group),
