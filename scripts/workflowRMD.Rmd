@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data and R packages
 
+`maps`, `tidyverse`, `lubridate`, `sf`, `ggspatial`
+
 ```{r message=FALSE,warning=FALSE}
 library(maps)
 library(tidyverse)
@@ -73,15 +75,15 @@ ggplot()+
   geom_polygon(data = map_data("state"),
                aes(x = long, y = lat, group = group),
                fill = "white", color = "black", size = 0.25)+
-  geom_sf(data = interstates, alpha = 0.6)+
-  geom_sf(data = Joro1.sf, size = 0.9, alpha = 0.70, color = "darkgreen")+
+  geom_sf(data = interstates, alpha = 0.6, linetype = "F1")+
+  geom_sf(data = Joro1.sf, size = 1.3, alpha = 0.70, color = "forestgreen")+
   coord_sf(xlim = c(-86, -80),
            ylim = c(30.5, 36))+
   labs(x="Longitude", y="Latitude")+
   theme(panel.grid.major = element_line(colour = "#c9c9c9", 
                                         linetype = "blank", 
                                         size = 0.3), 
-        panel.background = element_rect(fill = "lightskyblue1"), 
+        panel.background = element_rect(fill = "skyblue1"), 
         panel.border = element_rect(fill = NA))+
   annotation_scale()+
   annotation_north_arrow(location = "br", which_north = "true")
