@@ -1,6 +1,4 @@
 # iNaturalist
-Using iNaturalist data for visualization. 
+Using iNaturalist data for species distribution visualization. 
 
 Let's make some maps!
-
-This data details the range expansion of a newly introduced (2014) spider species in Georgia, the Joro Spider. 
